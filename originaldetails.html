@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bun Bun Bake Shop</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+    
+<body>
+    
+    <nav class="navbar">
+    <div class="logo">
+        <img src="bunbunlogo.svg" alt="bun bun logo">
+    </div>
+    <ul>
+        <li><a href="./index.html" class="navlink">HOME</a></li>
+        <li><a href="./about.html" class=navlink>ABOUT US</a></li>
+        <li><a href="./browse.html" class="navlink">ORDER</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="#cart" class="navlink">CART</a></li>
+    </ul>
+    </nav>
+
+
+
+<div class="details">
+    <img src=fullbun2-01.png class="fullbun" alt="full image of original cinnamon bun">
+
+    <div class="description">
+        <h5>ORIGINAL</h5>
+        
+        <p> Big, fluffy, soft, and absolutely delicious. The original cinnamon bun features our <br>signature sweet bun recipe topped with cinnamon and sugar.</p>
+        
+        
+        <div class="glazings">
+            <p>Glazings</p>
+            
+            <form action="./cart.html">
+                <input type="radio" name="glazing" value="none"> None
+                <input type="radio" name="glazing" value="vanilla"> Vanilla Milk
+                <input type="radio" name="glazing" value="sugar"> Sugar Milk
+                <input type="radio" name="glazing" value="chocolate"> Double Chocolate
+            </form>
+        </div>
+        
+        <div class="quantity">
+            <p>Quantity</p>
+        
+            <form action="./cart.html">
+                <input type="radio" id="ctOne" name="quantity"> 1ct/$5
+                <input type="radio" id="ctThree" name="quantity"> 3ct/$14
+                <input type="radio" id="ctSix" name="quantity"> 6ct/$27
+                <input type="radio" id="ctTwelve" name="quantity"> 12ct/$53
+            </form>
+       </div>
+        
+            <button type="button" class="button2">Add to Cart</button>
+      
+    </div>
+</div>
+ 
+
+</body>
+
+</html>

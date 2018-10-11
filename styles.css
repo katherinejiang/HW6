@@ -1,0 +1,266 @@
+@import url('https://fonts.google.com/specimen/Source+Sans+Pro');
+
+body {
+    font-family: "Source Sans Pro";
+    font-size: 13px;
+    margin: 15px;
+}
+
+nav.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+    
+nav li{
+    color: #4F4F4F;
+    list-style-type: none;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0px 25px;
+    }
+
+.logo{
+    width: 50px;
+    height: 50px;
+}
+
+.menu{   
+    border-style: solid;
+    border-color: #4f4f4f;
+    border-width: thin;
+    border-bottom-color: white;
+}
+
+.fullbun{
+    object-position: top;
+    width: 468px;
+    height: 585px;
+}
+h3{
+    color: #cf7d38;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+h4{
+    color: #4f4f4f;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+.caption{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    color: #4f4f4f;
+    font-size: 20px;
+}
+
+p{
+    font-weight: 500;
+    color: #4f4f4f;
+    font-weight: 700;
+}
+
+
+h5{
+    color: #cf7d38;
+    font-size: 30px;
+    margin: 10px 0px 0px 0px;
+}
+
+.mainhome{
+    background-image: url(bun3.jpg);
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    text-align: center;
+    background-size: cover;
+    padding-bottom: 15%;
+    font-kerning: normal;
+
+}
+
+.mainhome h1{
+    padding-top: 90px;
+    color: white;
+    font-size: 90px;  
+}
+
+.boxinfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 18px;
+    padding: 50px;
+    font-size: 20px;
+    background-color: #cf7d38;
+    margin-left: 32%;
+    margin-right: 32%; 
+
+}
+
+.boxinfo h2{
+    color: white;
+    font-size: 20px;
+    margin: 0;  
+    padding-bottom: 15px;
+}
+
+.button1{
+    background-color: white;
+    color: #cf7d38;
+    font-size: 20px;
+    margin: 5px auto;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.button1:active {
+	position:relative;
+	top:1px;
+}
+
+a:link{
+    color: #4F4F4F;
+    text-decoration: none;
+    }
+
+a:visited{
+    color: #4F4F4F;
+    text-decoration: none;   
+    }
+
+a.navlink:active{
+    border-bottom-color: #cf7d38;
+    border-bottom-width: thick;
+    border-bottom-style: solid;
+    color: #cf7d38;
+        }
+
+a.navlink:hover{
+    border-bottom-color: #cf7d38;
+    border-bottom-width: thick;
+    border-bottom-style: solid;
+}
+
+.listing{
+    display: flex;
+    flex-direction: column;
+}
+
+.tablegrid{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.caption{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.details{
+    border-color: #4f4f4f;
+    border-width: thin;
+    border-style: solid;
+    border-bottom-color: white;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 4%;
+    padding-left: 12%;
+    padding-right: 12%;
+    padding-bottom: 6%;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 3%;
+}
+
+input{
+    color: #4f4f4f;
+    background-color: #cf7d38;
+}
+
+
+.button2{
+    background-color:#cf7d38;
+	border-radius:28px;
+	border:1px solid;
+	color: white;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+}
+
+.button2:hover {
+	background-color:#E59B5C;
+}
+.button2:active {
+	position:relative;
+	top:1px;
+}
+
+.button3{
+    background-color: white;
+	border-radius:28px;
+	border:1px solid;
+	color: #cf7d38;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+}
+
+.button3:hover {
+	background-color:#E59B5C;
+    color: white;
+}
+
+.ourteam{
+    margin-top: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.headshots{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.teammate{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+    text-align: center;
+}
+
+
+
+h6{
+    color: #4f4f4f;
+    font-size: 30px;
+    margin: 0;
+}
