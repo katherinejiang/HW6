@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <title>Bun Bun Bake Shop</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
+    <script src="main.js" type="text/javascript"></script>
 </head>
-    
+
 <body>
     
+    <!--navigation bar-->
     <nav class="navbar">
     <div class="logo">
         <img src="bunbunlogo.svg" alt="bun bun logo">
@@ -18,10 +20,9 @@
         <li><a href="./about.html" class=navlink>ABOUT US</a></li>
         <li><a href="./browse.html" class="navlink">ORDER</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li><a href="#cart" class="navlink">CART</a></li>
+        <li><a href="./cart.html" class="navlink">CART</a></li>
     </ul>
     </nav>
-
 
 
 <div class="details">
@@ -37,10 +38,10 @@
             <p>Glazings</p>
             
             <form action="./cart.html">
-                <input type="radio" name="glazing" value="none"> None
-                <input type="radio" name="glazing" value="vanilla"> Vanilla Milk
-                <input type="radio" name="glazing" value="sugar"> Sugar Milk
-                <input type="radio" name="glazing" value="chocolate"> Double Chocolate
+                <input checked="checked" id="noneGlaze" type="radio" name="glazing" value="no"> <label for="noneGlaze">None</label>
+                <input id="vanillaGlaze" type="radio" name="glazing" value="vanilla milk"> <label for="vanillaGlaze">Vanilla Milk</label>
+                <input id="sugarGlaze" type="radio" name="glazing" value="sugar milk"> <label for="sugarGlaze">Sugar Milk</label>
+                <input id="chocolateGlaze" type="radio" name="glazing" value="double chocolate"> <label for="chocolateGlaze">Double Chocolate</label>
             </form>
         </div>
         
@@ -48,16 +49,18 @@
             <p>Quantity</p>
         
             <form action="./cart.html">
-                <input type="radio" id="ctOne" name="quantity"> 1ct/$5
-                <input type="radio" id="ctThree" name="quantity"> 3ct/$14
-                <input type="radio" id="ctSix" name="quantity"> 6ct/$27
-                <input type="radio" id="ctTwelve" name="quantity"> 12ct/$53
+                <input checked="checked" id="ctOne" type="radio" name="quantity1" value="5" > <label for="ctOne">1ct/$5</label>
+                <input id="ctThree" type="radio" name="quantity1" value="14"> <label for="ctThree">3ct/$14</label>
+                <input id="ctSix" type="radio" name="quantity1" value="27"> <label for="ctSix">6ct/$27</label>
+                <input id="ctTwelve" type="radio" name="quantity1" value="53"> <label for="ctTwelve">12ct/$53</label>
             </form>
        </div>
         
-            <button type="button" class="button2">Add to Cart</button>
+            <button type="button" class="button2" onclick="location.href='./cart.html'">Add to Cart</button>
       
     </div>
+    
+    
 </div>
  
 
