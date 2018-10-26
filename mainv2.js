@@ -6,22 +6,32 @@ var elements = document.getElementsByClassName("button2 click");
 console.log("click works");
 for(var i=0; i<elements.length; i++){
     elements[i].addEventListener("click", addToCart);
+    
 }
+
+
+
+//var inputQuantity = document.getElementsByName("quantity");
+//inputQuantity.addEventListener("input", function (){
+//    console.log("did this price change work");
+//  }
+//);
     
 function optionsVal (options){
     var selectedOption;
     for(var i=0; i<options.length;i++){
         if(options[i].checked){
             selectedOption = options[i].value;
-            break;
+            break;  
         }
     }
     return selectedOption;
 }
-    
-function buildCartItem(glazing, price, quantity){
+
+function buildCartItem(name, glazing, price, quantity){
     var cartItem = {
     options:{
+        name: name,
         glazing: glazing,
         price: price,
         quantity: quantity,
@@ -55,8 +65,9 @@ function addToCart(e){
             glazeOptions = optionsVal(document.getElementsByName('glazing'));
         } 
     var priceOptions = quantityOptions*5;
-
-    var shoppingCartItem = buildCartItem(glazeOptions, priceOptions, quantityOptions);
+    var checkBunType = document.getElementById("bunName");
+    var nameOptions = checkBunType.dataset.name;
+    var shoppingCartItem = buildCartItem(nameOptions, glazeOptions, priceOptions, quantityOptions);
 
     saveShoppingCart(shoppingCartItem);        
     }
@@ -81,14 +92,27 @@ function clearShoppingCart(){
 //});
 //    }
 
+function updatePrice(){
+    var quantityOptions = optionsVal(document.getElementsByName('quantity'));
+    var whatToReplace = document.getElementById("changePrice").firstChild;
+    var newPriceNode = ("$"+quantityOptions*5);
+    whatToReplace.nodeValue=newPriceNode;
+    console.log(whatToReplace);
+//    var newPriceElement = document.createElement("span");
+//    newPriceElement.appendChild(newPriceNode);
+//    console.log(newPriceElement);
+//    whatToReplace.replaceParent(newPriceElement, whatToReplace);
+    
+}
+
 function populateCartHtml() {
     // get cart 
     var cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
     
     if (cart.length == 0)
     {
-        //fix this later i guess ugh
-        alert("No items in cart!");
+        //fix this later
+        console.log("You don't have anything in your cart yet!");
     }
     else {
         for (var i = 0; i < cart.length; i++)
@@ -96,22 +120,40 @@ function populateCartHtml() {
             var itemList = document.getElementById("itemList");
             var itemRow = document.createElement("div");
 
-            var attr = document.createAttribute("class");
+            //var attr = document.createAttribute("class");
             // class
-            attr.value = "product-row";
+            //attr.value = "tablegridrow";
             // class="product-row"
-
-            itemRow.setAttribute("className", attr);
+//            var attr = "cart-row";
+//            itemRow.setAttribute("class", attr);
+            itemRow.className = "orderitem";
+            
+            // create name html
+            var nameElement = document.createElement("h7");
+            var nameNode = document.createTextNode(cart[i].options.name);
+            nameElement.appendChild(nameNode);
             
             // create glaze html
-            var titleElement = document.createElement("h7");
-            var titleNode = document.createTextNode(cart[i].options.glazing);
-            titleElement.appendChild(titleNode);
+            var glazeElement = document.createElement("h7");
+            var glazeNode = document.createTextNode(cart[i].options.glazing);
+            glazeElement.appendChild(glazeNode);
             
-            itemRow.appendChild(titleElement);
+            // create quantity html
+            var quantityElement = document.createElement("h7");
+            var quantityNode = document.createTextNode(cart[i].options.quantity);
+            quantityElement.appendChild(quantityNode);
+            
+            // create price html
+            var priceElement = document.createElement("h7");
+            var priceNode = document.createTextNode("$"+cart[i].options.price);
+            priceElement.appendChild(priceNode);
+            
+            itemRow.appendChild(nameElement);
+            itemRow.appendChild(glazeElement);
+            itemRow.appendChild(quantityElement);
+            itemRow.appendChild(priceElement);
             
             itemList.appendChild(itemRow);
-            
             
         }
     }
