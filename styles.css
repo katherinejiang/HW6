@@ -255,7 +255,6 @@ input{
 	border-radius:20px;
 	border:1px solid;
 	color: #cf7d38;
-	font-family:Arial;
 	font-size:17px;
 	padding:16px 31px;
 	text-decoration:none;
@@ -263,6 +262,21 @@ input{
 
 .button3:hover {
 	background-color:#E59B5C;
+    color: white;
+}
+
+button.removeButton {
+	background-color: white;
+	border-radius:8px;
+	border:.5px solid;
+	color: #cf7d38;
+	font-size:12px;
+	padding:3px 6px;
+	text-decoration:none;
+}
+
+button.removeButton:hover {
+    background-color:#E59B5C;
     color: white;
 }
 
@@ -287,10 +301,22 @@ input{
     text-align: center;
 }
 
+.thumbnailPictures{
+    border-radius: 20px;
+}
 .orderitem{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
+}
+
+.orderitem h7{
+    width: 25%;
+}
+
+.priceWidth{
+    color: purple;
 }
 
 .orderitem-headers{
@@ -300,15 +326,28 @@ input{
     justify-content: space-between;
  
 }
+
+.orderitem-headers h7{
+    width: 6%;
+}
+
 .subtotal{
+/*
     border-top-width: thin;
     border-top-color: #4f4f4f;
     border-top-style: solid;
+*/
     font-weight: 700;
     margin-top: 2%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;  
+    justify-content: space-between;
+    margin-right: 27%;
+}
+
+
+.formOption{
+    display: flex;
 }
 
 .buttonrow{
@@ -332,10 +371,10 @@ input{
 .keepShopping:hover, .clearButton:hover {
 	background-color:#E59B5C;
     color: white;
-    
 }
 
 .keepShopping:active, .clearButton:active {
 position:relative;
 	top:1px;
 }
+

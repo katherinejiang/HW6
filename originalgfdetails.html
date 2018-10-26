@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Bun Bun Bake Shop</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
-   
 </head>
 
 <body>
@@ -38,10 +37,10 @@
             <p>Glazings</p>
             
             <form action="./cart.html">
-                <input checked="checked" id="noneGlaze" type="radio" name="glazing" value="None"> <label for="noneGlaze">None</label>
-                <input id="vanillaGlaze" type="radio" name="glazing" value="Vanilla Milk"> <label for="vanillaGlaze">Vanilla Milk</label>
-                <input id="sugarGlaze" type="radio" name="glazing" value="Sugar Milk"> <label for="sugarGlaze">Sugar Milk</label>
-                <input id="chocolateGlaze" type="radio" name="glazing" value="Double Chocolate"> <label for="chocolateGlaze">Double Chocolate</label>
+                <div class="formOption"><input checked="checked" id="noneGlaze" type="radio" name="glazing" value="None"> <label for="noneGlaze">None</label> </div>
+                <div class="formOption"><input id="vanillaGlaze" type="radio" name="glazing" value="Vanilla Milk"> <label for="vanillaGlaze">Vanilla Milk</label></div>
+                <div class="formOption"><input id="sugarGlaze" type="radio" name="glazing" value="Sugar Milk"> <label for="sugarGlaze">Sugar Milk</label></div>
+                <div class="formOption"><input id="chocolateGlaze" type="radio" name="glazing" value="Double Chocolate"> <label for="chocolateGlaze">Double Chocolate</label></div>
             </form>
         </div>
         
@@ -49,10 +48,10 @@
             <p>Quantity</p>
         
             <form action="./cart.html">
-                <input checked="checked" id="ctOne" type="radio" name="quantity" value="1" onchange="updatePrice()"> <label for="ctOne">1</label>
-                <input id="ctThree" type="radio" name="quantity" value="3" onchange="updatePrice()"> <label for="ctThree">3</label>
-                <input id="ctSix" type="radio" name="quantity" value="6" onchange="updatePrice()"> <label for="ctSix">6</label>
-                <input id="ctTwelve" type="radio" name="quantity" value="12" onchange="updatePrice()"> <label for="ctTwelve">12</label>
+                <div class="formOption"><input checked="checked" id="ctOne" type="radio" name="quantity" value="1" onchange="updatePrice()"> <label for="ctOne">1</label></div>
+                <div class="formOption"><input id="ctThree" type="radio" name="quantity" value="3" onchange="updatePrice()"> <label for="ctThree">3</label></div>
+                <div class="formOption"><input id="ctSix" type="radio" name="quantity" value="6" onchange="updatePrice()"> <label for="ctSix">6</label></div>
+                <div class="formOption"><input id="ctTwelve" type="radio" name="quantity" value="12" onchange="updatePrice()"> <label for="ctTwelve">12</label></div>
             </form>
        </div>
         <h7>Price: <span id="changePrice">$5</span></h7>
@@ -62,7 +61,8 @@
     
 </div>
  
- <script src="mainv2.js" type="text/javascript"></script>
+<script src="mainv2.js" type="text/javascript"></script> 
+
 </body>
 
 </html>

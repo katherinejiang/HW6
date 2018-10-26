@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Bun Bun Bake Shop</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
-    <script src="mainv2.js" type="text/javascript"></script>
 </head>
     
 <body onload="populateCartHtml()">
@@ -17,7 +16,7 @@
         <li><a href="./about.html" class=navlink>ABOUT US</a></li>
         <li><a href="./browse.html" class="navlink">ORDER</a></li>
         <li><a href="#contact">CONTACT</a></li>
-        <li><a href="./cart.html" class="navlink">CART</a></li>
+        <li><a href="./cart.html" class="navlink">CART<span id="cartCount"> 0</span></a></li>
     </ul>
     </nav>
     
@@ -32,6 +31,7 @@
         <h7>Flavor</h7>
         <h7>Glazing</h7>
         <h7>Price</h7>
+        <h7></h7>
     </div>
     <div id="itemList">
 
@@ -48,7 +48,7 @@
         </div>
     
     </div>
-  
+<script src="mainv2.js" type="text/javascript"></script>  
 </body>
 
 </html>
