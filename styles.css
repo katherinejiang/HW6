@@ -78,10 +78,21 @@ h5{
     margin: 10px 0px 0px 0px;
 }
 
+.orderTitle{
+    color: #4f4f4f;
+    font-size: 30px;
+    margin: 0;
+    border-bottom-width: thin;
+    border-bottom-color: #4f4f4f;
+    border-bottom-style: solid;
+    margin-bottom: 1%;
+}
+
 h6{
     color: #4f4f4f;
     font-size: 30px;
     margin: 0;
+
 }
 
 h7{
@@ -179,7 +190,7 @@ a.navlink:hover{
 }
 
 .tablegridcolumn{
-   display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-left: 15%;
@@ -219,28 +230,29 @@ input{
 }
 
 
-.button2{
+.button2, .checkout{
     background-color:#cf7d38;
-	border-radius:28px;
+	border-radius:20px;
 	border:1px solid;
 	color: white;
-	font-family:Arial;
 	font-size:17px;
 	padding:16px 31px;
 	text-decoration:none;
 }
 
-.button2:hover {
+.button2:hover, .checkout:hover {
 	background-color:#E59B5C;
 }
-.button2:active {
+.button2:active, .checkout:hover {
 	position:relative;
 	top:1px;
+    box-shadow: 2px 2px #888888;
+    border: 0px;
 }
 
 .button3{
     background-color: white;
-	border-radius:28px;
+	border-radius:20px;
 	border:1px solid;
 	color: #cf7d38;
 	font-family:Arial;
@@ -278,12 +290,22 @@ input{
 .orderitem{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;  
+    justify-content: space-between;
 }
 
+.orderitem-headers{
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+    justify-content: space-between;
+ 
+}
 .subtotal{
-    font-style: oblique;
-    margin-top: 5%;
+    border-top-width: thin;
+    border-top-color: #4f4f4f;
+    border-top-style: solid;
+    font-weight: 700;
+    margin-top: 2%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;  
@@ -294,4 +316,26 @@ input{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.keepShopping, .clearButton{
+    background-color: white;
+	border-radius:20px;
+	border:1px solid;
+	color: #cf7d38;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+} 
+
+.keepShopping:hover, .clearButton:hover {
+	background-color:#E59B5C;
+    color: white;
+    
+}
+
+.keepShopping:active, .clearButton:active {
+position:relative;
+	top:1px;
 }

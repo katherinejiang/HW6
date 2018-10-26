@@ -83,6 +83,7 @@ function addToCart(e){
 function clearShoppingCart(){
     console.log("shoppingcart cleared");
     localStorage.removeItem('shoppingCart');
+    window.location.reload();
 }
     
 //    document.onLoad = function(){
@@ -98,35 +99,49 @@ function updatePrice(){
     var newPriceNode = ("$"+quantityOptions*5);
     whatToReplace.nodeValue=newPriceNode;
     console.log(whatToReplace);
-//    var newPriceElement = document.createElement("span");
-//    newPriceElement.appendChild(newPriceNode);
-//    console.log(newPriceElement);
-//    whatToReplace.replaceParent(newPriceElement, whatToReplace);
-    
+
 }
+
+//function updateSubtotal(){
+//    var currentSubtotal = document.getElementById("itemList");
+//    console.log(currentSubtotal.childNodes.length);
+//    var whatToReplace = document.getElementById("subtotalReplace").firstChild;
+//    console.log(whatToReplace);
+//    var runningSubtotal = 0;
+//    
+//    for (var i = 0; i<currentSubtotal.childNodes.length; i++){
+//        runningSubtotal +=currentSubtotal.childNodes[i];
+//        
+//    }
+//
+//    whatToReplace.nodeValue=runningSubtotal;
+//}
 
 function populateCartHtml() {
     // get cart 
     var cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+    var whatToReplace = document.getElementById("subtotalReplace").firstChild;
     
     if (cart.length == 0)
     {
-        //fix this later
-        console.log("You don't have anything in your cart yet!");
+        var itemList = document.getElementById("itemList");
+        var noElement = document.createElement("h3");
+        var noNode = document.createTextNode("You haven't added anything to your cart yet!");
+        noElement.appendChild(noNode);
+        
+        itemList.appendChild(noElement);
+        
+        
+        whatToReplace.nodeValue="$0";
     }
     else {
+        var runningSubtotal = 0;
         for (var i = 0; i < cart.length; i++)
         {
             var itemList = document.getElementById("itemList");
             var itemRow = document.createElement("div");
 
-            //var attr = document.createAttribute("class");
-            // class
-            //attr.value = "tablegridrow";
-            // class="product-row"
-//            var attr = "cart-row";
-//            itemRow.setAttribute("class", attr);
-            itemRow.className = "orderitem";
+            itemRow.className = "orderitem content";
             
             // create name html
             var nameElement = document.createElement("h7");
@@ -147,15 +162,23 @@ function populateCartHtml() {
             var priceElement = document.createElement("h7");
             var priceNode = document.createTextNode("$"+cart[i].options.price);
             priceElement.appendChild(priceNode);
+            runningSubtotal += cart[i].options.price;
+            console.log(runningSubtotal);
+        
             
+            itemRow.appendChild(quantityElement);
             itemRow.appendChild(nameElement);
             itemRow.appendChild(glazeElement);
-            itemRow.appendChild(quantityElement);
             itemRow.appendChild(priceElement);
             
             itemList.appendChild(itemRow);
             
+            
+            
         }
     }
+    
+    
+        whatToReplace.nodeValue="$"+runningSubtotal;
 }
 

@@ -26,22 +26,22 @@
 
 
 <div class="details">
-    <img src=fullbun2-01.png class="fullbun" alt="full image of pumpkin spice cinnamon bun">
+    <img src=fullbun2-01.png class="fullbun" alt="full image of blackberry cinnamon bun">
 
     <div class="description">
-        <h5 id="bunName" data-name="Caramel Pecan Cinnamon Bun" data-img="fullbun2-01.png">CARAMEL PECAN</h5>
+        <h5 id="bunName" data-name="Caramel Pecan" data-img="fullbun2-01.png">CARAMEL PECAN</h5>
         
-        <p> Big, fluffy, soft, and absolutely delicious. The caramel pecan cinnamon bun features our <br>signature sweet bun recipe topped with cinnamon, sugar, pecans, and a caramel drizzle.</p>
+        <p> Big, fluffy, soft, and absolutely delicious. The caramel pecan cinnamon bun features our <br>signature sweet bun recipe topped with cinnamon, sugar, pecans, and caramel drizzle.</p>
         
         
         <div class="glazings">
             <p>Glazings</p>
             
             <form action="./cart.html">
-                <input checked="checked" id="noneGlaze" type="radio" name="glazing" value="no"> <label for="noneGlaze">None</label>
-                <input id="vanillaGlaze" type="radio" name="glazing" value="vanilla milk"> <label for="vanillaGlaze">Vanilla Milk</label>
-                <input id="sugarGlaze" type="radio" name="glazing" value="sugar milk"> <label for="sugarGlaze">Sugar Milk</label>
-                <input id="chocolateGlaze" type="radio" name="glazing" value="double chocolate"> <label for="chocolateGlaze">Double Chocolate</label>
+                <input checked="checked" id="noneGlaze" type="radio" name="glazing" value="None"> <label for="noneGlaze">None</label>
+                <input id="vanillaGlaze" type="radio" name="glazing" value="Vanilla Milk"> <label for="vanillaGlaze">Vanilla Milk</label>
+                <input id="sugarGlaze" type="radio" name="glazing" value="Sugar Milk"> <label for="sugarGlaze">Sugar Milk</label>
+                <input id="chocolateGlaze" type="radio" name="glazing" value="Double Chocolate"> <label for="chocolateGlaze">Double Chocolate</label>
             </form>
         </div>
         
@@ -49,13 +49,13 @@
             <p>Quantity</p>
         
             <form action="./cart.html">
-                <input checked="checked" id="ctOne" type="radio" name="quantity" value="1"> <label for="ctOne">1</label>
-                <input id="ctThree" type="radio" name="quantity" value="3"> <label for="ctThree">3</label>
-                <input id="ctSix" type="radio" name="quantity" value="6"> <label for="ctSix">Half dozen</label>
-                <input id="ctTwelve" type="radio" name="quantity" value="12"> <label for="ctTwelve">Dozen</label>
+                <input checked="checked" id="ctOne" type="radio" name="quantity" value="1" onchange="updatePrice()"> <label for="ctOne">1</label>
+                <input id="ctThree" type="radio" name="quantity" value="3" onchange="updatePrice()"> <label for="ctThree">3</label>
+                <input id="ctSix" type="radio" name="quantity" value="6" onchange="updatePrice()"> <label for="ctSix">6</label>
+                <input id="ctTwelve" type="radio" name="quantity" value="12" onchange="updatePrice()"> <label for="ctTwelve">12</label>
             </form>
        </div>
-        <p>Price: <p>
+        <h7>Price: <span id="changePrice">$5</span></h7>
             <button type="button" class="button2 click" onclick="location.href='./cart.html'">Add to Cart</button>
       
     </div>

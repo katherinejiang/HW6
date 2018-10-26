@@ -25,12 +25,12 @@
     <h3>CART</h3>
     
     <div class="tablegridcolumn">
-    <h6>Order Overview</h6>
+    <h6 class="orderTitle">Order Overview</h6>
     
-    <div class="orderitem">
+    <div class="orderitem-headers">
+        <h7>Quantity</h7>
         <h7>Flavor</h7>
         <h7>Glazing</h7>
-        <h7>Quantity</h7>
         <h7>Price</h7>
     </div>
     <div id="itemList">
@@ -38,13 +38,13 @@
     </div>
     <div class="subtotal">
         <h7>Subtotal (excluding tax and shipping)</h7>
-        <h7>Subtotal</h7>
+        <h7 id="subtotalReplace">Subtotal</h7>
     </div>
     
         <div class="buttonrow">
-            <button type="button" class="button2" onclick="location.href='./browse.html'">Continue Shopping</button>
-            <button type="button" class="button2">Checkout Now</button>
-            <button type="button" id="clearbutton" class="button2" onclick="clearShoppingCart()">Clear Shopping Cart</button>
+            <button type="button" class="keepShopping" onclick="location.href='./browse.html'">Continue Shopping</button>
+            <button type="button" class="checkout">Checkout Now</button>
+            <button type="button" id="clearbutton" class="clearButton" onclick="clearShoppingCart()">Clear Shopping Cart</button>
         </div>
     
     </div>
