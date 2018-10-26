@@ -14,7 +14,7 @@ function optionsVal (options){
         if(options[i].checked){
             selectedOption = options[i].value;
             break;
-        }  
+        }
     }
     return selectedOption;
 }
@@ -46,7 +46,6 @@ function saveShoppingCart(cartItem){
 }
 
 function addToCart(e){
-    console.warn(e);
     if (e && e.target){
         var quantityOptions;
         var glazeOptions;
@@ -88,7 +87,8 @@ function populateCartHtml() {
     
     if (cart.length == 0)
     {
-        // display message
+        //fix this later i guess ugh
+        alert("No items in cart!");
     }
     else {
         for (var i = 0; i < cart.length; i++)

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bun Bun Bake Shop</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+   
+</head>
+
+<body>
+    
+    <!--navigation bar-->
+    <nav class="navbar">
+    <div class="logo">
+        <img src="bunbunlogo.svg" alt="bun bun logo">
+    </div>
+    <ul>
+        <li><a href="./index.html" class="navlink">HOME</a></li>
+        <li><a href="./about.html" class=navlink>ABOUT US</a></li>
+        <li><a href="./browse.html" class="navlink">ORDER</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="./cart.html" class="navlink">CART</a></li>
+    </ul>
+    </nav>
+
+
+<div class="details">
+    <img src=fullbun2-01.png class="fullbun" alt="full image of walnut cinnamon bun">
+
+    <div class="description">
+        <h5 id="bunName" data-name="Walnut Cinnamon Bun" data-img="fullbun2-01.png">WALNUT</h5>
+        
+        <p> Big, fluffy, soft, and absolutely delicious. The walnut cinnamon bun features our <br>signature sweet bun recipe topped with cinnamon, sugar, and walnuts.</p>
+        
+        
+        <div class="glazings">
+            <p>Glazings</p>
+            
+            <form action="./cart.html">
+                <input checked="checked" id="noneGlaze" type="radio" name="glazing" value="no"> <label for="noneGlaze">None</label>
+                <input id="vanillaGlaze" type="radio" name="glazing" value="vanilla milk"> <label for="vanillaGlaze">Vanilla Milk</label>
+                <input id="sugarGlaze" type="radio" name="glazing" value="sugar milk"> <label for="sugarGlaze">Sugar Milk</label>
+                <input id="chocolateGlaze" type="radio" name="glazing" value="double chocolate"> <label for="chocolateGlaze">Double Chocolate</label>
+            </form>
+        </div>
+        
+        <div class="quantity">
+            <p>Quantity</p>
+        
+            <form action="./cart.html">
+                <input checked="checked" id="ctOne" type="radio" name="quantity" value="1"> <label for="ctOne">1</label>
+                <input id="ctThree" type="radio" name="quantity" value="3"> <label for="ctThree">3</label>
+                <input id="ctSix" type="radio" name="quantity" value="6"> <label for="ctSix">Half dozen</label>
+                <input id="ctTwelve" type="radio" name="quantity" value="12"> <label for="ctTwelve">Dozen</label>
+            </form>
+       </div>
+        <h7>Price: </h7>
+            <button type="button" class="button2 click" onclick="location.href='./cart.html'">Add to Cart</button>
+      
+    </div>
+    
+</div>
+ 
+ <script src="mainv2.js" type="text/javascript"></script>
+</body>
+
+</html>
