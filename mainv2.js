@@ -1,38 +1,119 @@
 /*eslint-env browser*/
-var shoppingCart = [];
-//var glazingNames = ["noneGlaze", "Vanilla", "Sugar","Chocolate"];
+/*eslint-env document*/
+/*eslint no-console: ["error", { allow: ["warn", "error", "log"] }] */
 
-function addToCart(glaze, price, quantity){
-    var singleProduct={
-        name: "name",
-        glaze: "glaze",
-        quantity: "quantity"
-    }
+var elements = document.getElementsByClassName("button2 click");
+console.log("click works");
+for(var i=0; i<elements.length; i++){
+    elements[i].addEventListener("click", addToCart);
+}
     
-    var quantityRadios = document.getElementsByName("quantity1");
-    if (quantityRadios[0].checked) {
-		singleProduct.glazing = 1;
-    } else if (quantityRadios[1].checked) {
-        singleProduct.glazing = 3;
-    } else if (quantityRadios[2].checked) {
-		singleProduct.glazing = 6;
-    } else if (quantityRadios[3].checked) {
-		singleProduct.glazing = 12;
+function optionsVal (options){
+    var selectedOption;
+    for(var i=0; i<options.length;i++){
+        if(options[i].checked){
+            selectedOption = options[i].value;
+            break;
+        }  
     }
+    return selectedOption;
+}
     
-    var glazingRadios = document.getElementsByName("glazing");
-    if (glazingRadios[0].checked) {
-		singleProduct.glazing = glazingRadios[0].value;
-    } else if (glazingRadios[1].checked) {
-        singleProduct.glazing = glazingRadios[1].value
-    } else if (glazingRadios[2].checked) {
-		singleProduct.glazing = glazingRadios[2].value
-    } else if (glazingRadios[3].checked) {
-		singleProduct.glazing = glazingRadios[3].value
+function buildCartItem(glazing, price, quantity){
+    var cartItem = {
+    options:{
+        glazing: glazing,
+        price: price,
+        quantity: quantity,
+        },
+    };
+        return cartItem;
     }
+
+function saveShoppingCart(cartItem){
+    console.log("in the save function!");
     
-    shoppingCart.push(singleProduct);
-    localStorage
+    var cartFromStorage = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    console.log(cartFromStorage);
+//    if(cartFromStorage.length>0){
+        cartFromStorage.push(cartItem);
+//    }else {
+//        cartFromStorage=[cartItem];
+//    }
+    //this puts into localStorage
+    console.log(cartFromStorage);
+    localStorage.setItem('shoppingCart', JSON.stringify(cartFromStorage));
 }
 
-document.getElementsByClassName("button2").addEventListener("click", addToCart());
+function addToCart(e){
+    console.warn(e);
+    if (e && e.target){
+        var quantityOptions;
+        var glazeOptions;
+        
+        if(document.getElementsByName('quantity').length || document.getElementsByName('glazing').length){
+            quantityOptions = optionsVal(document.getElementsByName('quantity'));
+            glazeOptions = optionsVal(document.getElementsByName('glazing'));
+        } 
+    var priceOptions = quantityOptions*5;
+
+    var shoppingCartItem = buildCartItem(glazeOptions, priceOptions, quantityOptions);
+
+    saveShoppingCart(shoppingCartItem);        
+    }
+    }
+    
+//function loadShoppingCart() {
+//    if(localStorage.getItem('shoppingCart')){
+//        JSON.parse(localStorage.getItem('shoppingCart'));
+//    }
+//    loadShoppingCart();
+//}
+  
+function clearShoppingCart(){
+    console.log("shoppingcart cleared");
+    localStorage.removeItem('shoppingCart');
+}
+    
+//    document.onLoad = function(){
+////        document.getElementById("clearbutton").addEventListener("click", function(){
+////    console.log("shoppingcart cleared");
+////    localStorage.removeItem('shoppingCart');
+//});
+//    }
+
+function populateCartHtml() {
+    // get cart 
+    var cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+    
+    if (cart.length == 0)
+    {
+        // display message
+    }
+    else {
+        for (var i = 0; i < cart.length; i++)
+        {
+            var itemList = document.getElementById("itemList");
+            var itemRow = document.createElement("div");
+
+            var attr = document.createAttribute("class");
+            // class
+            attr.value = "product-row";
+            // class="product-row"
+
+            itemRow.setAttribute("className", attr);
+            
+            // create glaze html
+            var titleElement = document.createElement("h7");
+            var titleNode = document.createTextNode(cart[i].options.glazing);
+            titleElement.appendChild(titleNode);
+            
+            itemRow.appendChild(titleElement);
+            
+            itemList.appendChild(itemRow);
+            
+            
+        }
+    }
+}
+

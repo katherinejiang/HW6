@@ -4,10 +4,10 @@ var glazingNames = ["NoneGlaze", "Vanilla", "Sugar", "Chocolate"];
 var shoppingCart = [];
 
 var cartItem(id, quantity, glazing){
-    this.quantity=quantity,
-    this.glazing=glazing,
+    this.quantity = quantity,
+    this.glazing = glazing,
     this.id=id
-}
+};
 
 //function clearShoppingCart() {
 //    var glazingRadios = document.getElementsByName('glazing');

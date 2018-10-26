@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Bun Bun Bake Shop</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
-    <script src="mainv2.js" type="text/javascript"></script>
+   
 </head>
 
 <body>
@@ -29,7 +29,7 @@
     <img src=fullbun2-01.png class="fullbun" alt="full image of original cinnamon bun">
 
     <div class="description">
-        <h5>ORIGINAL</h5>
+        <h5 id="bunName" data-name="Original Cinnamon Bun" data-img="fullbun2-01.png">ORIGINAL</h5>
         
         <p> Big, fluffy, soft, and absolutely delicious. The original cinnamon bun features our <br>signature sweet bun recipe topped with cinnamon and sugar.</p>
         
@@ -49,21 +49,20 @@
             <p>Quantity</p>
         
             <form action="./cart.html">
-                <input checked="checked" id="ctOne" type="radio" name="quantity1" value="5"> <label for="ctOne">1ct/$5</label>
-                <input id="ctThree" type="radio" name="quantity1" value="14"> <label for="ctThree">3ct/$14</label>
-                <input id="ctSix" type="radio" name="quantity1" value="27"> <label for="ctSix">6ct/$27</label>
-                <input id="ctTwelve" type="radio" name="quantity1" value="53"> <label for="ctTwelve">12ct/$53</label>
+                <input checked="checked" id="ctOne" type="radio" name="quantity" value="1"> <label for="ctOne">1</label>
+                <input id="ctThree" type="radio" name="quantity" value="3"> <label for="ctThree">3</label>
+                <input id="ctSix" type="radio" name="quantity" value="6"> <label for="ctSix">Half dozen</label>
+                <input id="ctTwelve" type="radio" name="quantity" value="12"> <label for="ctTwelve">Dozen</label>
             </form>
        </div>
-        
-            <button type="button" class="button2" onclick="location.href='./cart.html'">Add to Cart</button>
+        <h7>Price: </h7>
+            <button type="button" class="button2 click" onclick="location.href='./cart.html'">Add to Cart</button>
       
     </div>
     
-    
 </div>
  
-
+ <script src="mainv2.js" type="text/javascript"></script>
 </body>
 
 </html>
