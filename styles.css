@@ -374,7 +374,13 @@ button.removeButton:hover {
 }
 
 .keepShopping:active, .clearButton:active {
-position:relative;
+    position:relative;
 	top:1px;
 }
 
+.dot{
+    background-color: #E59B5C;
+    border-radius: 50%;
+    margin: 5px;
+    padding: 5px 10px 5px 10px;
+}

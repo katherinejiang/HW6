@@ -19,14 +19,15 @@ function optionsVal (options){
     return selectedOption;
 }
 
-function buildCartItem(name, glazing, price, quantity){
+function buildCartItem(id, name, glazing, price, quantity){
     var cartItem = {
+    id:id,
     options:{
         name: name,
         glazing: glazing,
         price: price,
         quantity: quantity,
-        },
+        }
     };
         return cartItem;
     }
@@ -53,8 +54,9 @@ function addToCart(e){
     var priceOptions = quantityOptions*5;
     var checkBunType = document.getElementById("bunName");
     var nameOptions = checkBunType.dataset.name;
-    var shoppingCartItem = buildCartItem(nameOptions, glazeOptions, priceOptions, quantityOptions);
-
+    var idNumber = Math.random();
+    var shoppingCartItem = buildCartItem(idNumber, nameOptions, glazeOptions, priceOptions, quantityOptions);
+    
     saveShoppingCart(shoppingCartItem);
     countItems();
         
@@ -94,8 +96,11 @@ function populateCartHtml() {
         for (var i = 0; i < cart.length; i++){
             itemList = document.getElementById("itemList");
             var itemRow = document.createElement("div");
-
+            var idAttr = document.createAttribute("id");
+            idAttr.value = cart[i].id;
+            console.log(cart[i]);
             itemRow.className = "orderitem";
+            itemRow.setAttributeNode(idAttr);
             
             //create name html
             var nameElement = document.createElement("h7");
@@ -121,6 +126,11 @@ function populateCartHtml() {
             
             //delete button
             var deleteElement = document.createElement("button");
+            
+            var onClickAttr = document.createAttribute("onClick");
+            onClickAttr.value = "deleteCartRow(this)";
+            deleteElement.setAttributeNode(onClickAttr);
+            
             var deleteNode = document.createTextNode("Remove");
             deleteElement.className ="removeButton";
             deleteElement.appendChild(deleteNode);
@@ -142,16 +152,35 @@ function countItems(){
     var cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
     console.log(cart);
     var whatToReplace = document.getElementById("cartCount").firstChild;
+    
     if(cart.length>=1){
     whatToReplace.nodeValue=cart.length;
+    whatToReplace.parentNode.className = "dot";
+    
+    
     } else{
         whatToReplace.nodeValue = "";
-    }
+        }
 }
 
 var deleteButtonClicked = document.getElementsByClassName("removeButton");
-deleteButtonClicked.addEventListener('click', deleteCartRow());
-function deleteCartRow(){
+// deleteButtonClicked.addEventListener('click', deleteCartRow());
+
+function deleteCartRow(buttonNode){
+    console.log(buttonNode);
+    var deletedItemId = buttonNode.parentNode.id;
+    console.log(deletedItemId);
+    buttonNode.parentNode.remove();
+    
+    var cart = JSON.parse(localStorage.getItem('shoppingCart'));
+    for(var i=0; i<cart.length; i++){
+        if(cart[i].id == deletedItemId){
+            cart.splice(i, 1);
+            break;
+        }    
+    }
+    localStorage.setItem('shoppingCart', JSON.stringify(cart));
+    window.location.reload();
     
 }
 
