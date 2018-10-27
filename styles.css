@@ -102,7 +102,7 @@ h7{
 }
 
 .mainhome{
-    background-image: url(bun3.jpg);
+    background-image: url(assets/bun3.jpg);
     display: flex;
     flex-direction: column; 
     justify-content: space-between;
