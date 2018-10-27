@@ -103,23 +103,23 @@ function populateCartHtml() {
             itemRow.setAttributeNode(idAttr);
             
             //create name html
-            var nameElement = document.createElement("h7");
+            var nameElement = document.createElement("h6");
             var nameNode = document.createTextNode(cart[i].options.name);
             nameElement.appendChild(nameNode);
             
             //create glaze html
-            var glazeElement = document.createElement("h7");
+            var glazeElement = document.createElement("h6");
             var glazeNode = document.createTextNode(cart[i].options.glazing);
             glazeElement.appendChild(glazeNode);
             
             //create quantity html
-            var quantityElement = document.createElement("h7");
+            var quantityElement = document.createElement("h6");
             
             var quantityNode = document.createTextNode(cart[i].options.quantity);
             quantityElement.appendChild(quantityNode);
             
             //create price html
-            var priceElement = document.createElement("h7");
+            var priceElement = document.createElement("h6");
             var priceNode = document.createTextNode("$"+cart[i].options.price);
             priceElement.appendChild(priceNode);
             runningSubtotal += cart[i].options.price;

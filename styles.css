@@ -90,15 +90,9 @@ h5{
 
 h6{
     color: #4f4f4f;
-    font-size: 30px;
-    margin: 0;
-
-}
-
-h7{
-    color: #4f4f4f;
     font-size: 20px;
     margin: 0;
+
 }
 
 .mainhome{
@@ -311,7 +305,7 @@ button.removeButton:hover {
     width: 100%;
 }
 
-.orderitem h7{
+.orderitem h6{
     width: 25%;
 }
 
@@ -332,11 +326,6 @@ button.removeButton:hover {
 }
 
 .subtotal{
-/*
-    border-top-width: thin;
-    border-top-color: #4f4f4f;
-    border-top-style: solid;
-*/
     font-weight: 700;
     margin-top: 2%;
     display: flex;
